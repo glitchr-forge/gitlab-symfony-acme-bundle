@@ -22,7 +22,8 @@ The bundle contains:
 - A service class called "AcmeService", this one can be autowire to any Symfony class
 - A controller class pointing to route "http://yourdomain.com/acme"
 - A model entity named "Anvil"
-- A configuration file located in ./config/packages/acme_bundle.yaml
+- A configuration file should be located in ./config/packages/acme_bundle.yaml
+  (https://github.com/symfony/recipes-contrib, it depends on symfony flex package..)
 - A public directory installed in ./public/bundles/acme/ that contains a 'dummy' directory named assets
 
 How to setup a controller?
