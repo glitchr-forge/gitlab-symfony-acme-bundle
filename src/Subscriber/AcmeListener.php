@@ -1,13 +1,13 @@
 <?php
 
-namespace Acme\AcmeBundle\Listener;
+namespace Acme\AcmeBundle\Subscriber;
 
-use \Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use \Symfony\Component\HttpKernel\Event\RequestEvent;
 use \Symfony\Component\HttpFoundation\Response;
 
 class AcmeListener
 {
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelRequest(RequestEvent $event)
     {
         $request = $event->getRequest();
 	dump("[".__CLASS__."] Hello World!");
