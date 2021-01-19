@@ -1,7 +1,7 @@
 {
     "name": "xkzl/skeleton-bundle",
     "type": "symfony-bundle",
-    "description": "A Symfony Bundle To Use as Skeleton", 
+    "description": "A Symfony Bundle To Use as Skeleton",
     "keywords": ["Symfony5", "Skeleton"],
     "license": "MIT",
     "homepage": "http://gitlab.glitchr.io/public-repository/symfony/skeleton-bundle/",
@@ -10,7 +10,7 @@
             "name": "Marco Meyer",
             "email": "marco.meyerconde@gmail.com",
             "role": "Developer"
-        },
+        }
     ],
     "support": {
         "issues": "http://gitlab.glitchr.io/public-repository/symfony/skeleton-bundle/issues",
