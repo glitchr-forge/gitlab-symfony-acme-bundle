@@ -8,21 +8,19 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @inheritdoc
+     */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('acme_social');
+        $builder = new TreeBuilder("acme");
 
-        $treeBuilder->getRootNode()
+        $builder->getRootNode()
             ->children()
-                ->arrayNode('twitter')
-                    ->children()
-                        ->integerNode('client_id')->end()
-                        ->scalarNode('client_secret')->end()
-                    ->end()
-                ->end() // twitter
-            ->end()
-        ;
+                ->scalarNode('foo')->end()
+                ->scalarNode('bar')->end()
+            ->end();
 
-        return $treeBuilder;
+        return $builder;
     }
 }

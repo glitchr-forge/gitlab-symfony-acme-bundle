@@ -6,14 +6,16 @@ namespace Acme\AcmeBundle\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class AcmeController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class AcmeController extends AbstractController
 {
     /**
      * Controller example
      *
      * @Route("/acme", name="app_acme")
      */
-    public function BeepBeep()
+    public function Main()
     {
         return new Response('<html><body>Beep beep !</body></html>');
     }

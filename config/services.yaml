@@ -1,3 +1,0 @@
-services:
-  acme.acme_bundle.event_listener:
-          class: acme\AcmeBundle\Listener\AcmeListener
