@@ -13,12 +13,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "xKzl\\SkeletonBundle\\": "."
+            "xKzl\\SkeletonBundle\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\xKzl\\SkeletonBundle\\": "./Tests"
+            "Tests\\xKzl\\SkeletonBundle\\": "./src/Tests"
         }
     },
     "require": {
