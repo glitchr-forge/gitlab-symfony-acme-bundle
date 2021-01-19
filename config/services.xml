@@ -4,7 +4,26 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+
         <defaults public="false" />
+
+
+        <!-- Controller declarations -->
+        <service id="acme.controller" class="Acme\AcmeBundle\Controller\AcmeController" public="true">
+            <!-- e.g. Some classic arguments
+                <argument type="service" id="hwi_oauth.security.oauth_utils" />
+                <argument type="service" id="hwi_oauth.resource_ownermap_locator" /> -->
+            <call method="setContainer"><argument type="service" id="service_container" /></call>
+            <tag name="controller.service_arguments" />
+        </service>
+
+
+        <!-- Listener declarations -->
+        <service id="acme.event_listener" class="Acme\AcmeBundle\Service\AcmeService" />
+
+
+        <!-- Service declarations -->
         <service id="acme.service" class="Acme\AcmeBundle\Service\AcmeService" />
+
     </services>
 </container>

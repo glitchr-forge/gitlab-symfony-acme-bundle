@@ -1,6 +1,7 @@
 <?php
 
 namespace Acme\AcmeBundle\DependencyInjection;
+use Acme\AcmeBundle\Service\AcmeService;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -18,31 +19,36 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        //
+        // Load service declaration (includes services, controllers,..)
+
+        // Format XML
         $loader = new XmlFileLoader($container, new FileLocator(\dirname(__DIR__, 2).'/config'));
-        $loader->load('controllers.xml');
         $loader->load('services.xml');
 
+        // Format YAML
+        //$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        //$loader->load('services.yaml');
+
+        // Format PHP
+        //$loader = new PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        //$loader->load('services.php');
+
+        //
+        // Configuration file: ./config/package/acme_bundle.yaml
         $processor = new Processor();
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
 
-        $container->setDefinition('acme.builder', new Definition(AcmeBuilder::class))->setPublic(false);
-        $container->setAlias(AcmeBuilderInterface::class, 'acme.builder')->setPublic(false);
-
-        if (class_exists(Environment::class)) {
-
-            $container
-                ->setDefinition('acme.twig_extension', new Definition(AcmeExtension::class))
-                ->addTag('twig.extension')
-                ->setPublic(false)
-            ;
-        }
+        //
+        // Alias declaration
+        $container->setAlias(AcmeService::class, 'acme.service')->setPublic(false);
+        $container->setAlias(AcmeController::class, 'acme.controller')->setPublic(false);
     }
 
     public function prepend(ContainerBuilder $container)
     {
         $bundles = $container->getParameter('kernel.bundles');
-
         if (!isset($bundles['AcmeGoodbyeBundle'])) {
 
             $config = ['use_acme_goodbye' => false];
@@ -58,7 +64,6 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
 
         $configs = $container->getExtensionConfig($this->getAlias());
         $config = $this->processConfiguration(new Configuration(), $configs);
-
         if (isset($config['entity_manager_name'])) {
             $config = ['entity_manager_name' => $config['entity_manager_name']];
             $container->prependExtensionConfig('acme_something', $config);

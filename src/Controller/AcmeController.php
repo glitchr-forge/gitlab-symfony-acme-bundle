@@ -17,6 +17,7 @@ class AcmeController extends AbstractController
      */
     public function Main()
     {
+        dump("[".__CLASS__."] Hello world !");
         return new Response('<html><body>Beep beep !</body></html>');
     }
 }
