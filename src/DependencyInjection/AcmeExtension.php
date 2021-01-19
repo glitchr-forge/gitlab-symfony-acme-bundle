@@ -1,6 +1,6 @@
 <?php
 
-namespace xKzl\SkeletonBundle\DependencyInjection;
+namespace xKzl\AcmeBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
@@ -8,8 +8,13 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class AcmeExtension extends Extension implements PrependExtensionInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $loader = new XmlFileLoader($container, new FileLocator(\dirname(__DIR__, 2).'/config'));
+        $loader->load('services.xml');
 
         $container
             ->setDefinition('acme.builder', new Definition(AcmeBuilder::class))

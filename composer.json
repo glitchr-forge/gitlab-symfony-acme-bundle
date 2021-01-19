@@ -1,8 +1,8 @@
 {
-    "name": "xkzl/skeleton-bundle",
+    "name": "xkzl/acme-bundle",
     "type": "symfony-bundle",
-    "description": "Skeleton integration for Symfony",
-    "keywords": ["symfony", "skeleton"],
+    "description": "ACME Skeleton Bundle for Symfony5",
+    "keywords": ["symfony", "skeleton", "acme"],
     "homepage": "https://gitlab.glitchr.io/repository-public/symfony",
     "license": "MIT",
     "authors": [
@@ -13,12 +13,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "xKzl\\SkeletonBundle\\": "./src"
+            "xKzl\\AcmeBundle\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\xKzl\\SkeletonBundle\\": "./src/Tests"
+            "Tests\\xKzl\\AcmeBundle\\": "./src/Tests"
         }
     },
     "require": {
@@ -34,4 +34,3 @@
         "sort-packages": true
     }
 }
-

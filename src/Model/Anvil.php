@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace xKzl\SkeletonBundle\Model;
+namespace xKzl\AcmeBundle\Model;
 
 class Anvil
 {
