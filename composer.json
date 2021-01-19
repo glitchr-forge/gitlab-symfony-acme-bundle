@@ -1,40 +1,43 @@
 {
     "name": "xkzl/skeleton-bundle",
     "type": "symfony-bundle",
-    "description": "A Symfony Bundle To Use as Skeleton",
-    "keywords": ["Symfony5", "Skeleton"],
+    "description": "Skeleton integration for Symfony",
+    "keywords": ["symfony", "skeleton"],
+    "homepage": "https://gitlab.glitchr.io/repository-public/symfony",
     "license": "MIT",
-    "homepage": "http://gitlab.glitchr.io/public-repository/symfony/skeleton-bundle/",
     "authors": [
         {
             "name": "Marco Meyer",
             "email": "marco.meyerconde@gmail.com"
         }
     ],
-    "support": {
-        "issues": "http://gitlab.glitchr.io/public-repository/symfony/skeleton-bundle/issues",
-        "source": "http://gitlab.glitchr.io/public-repository/symfony/skeleton-bundle"
-    },
-    "require": {
-        "php": "^7.2.5",
-        "symfony/framework-bundle": ">=5.0 <6.0.0",
-        "symfony/security-bundle": ">=5.0 <6.0.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^8.0",
-        "php-coveralls/php-coveralls": "^2.1"
-    },
     "autoload": {
-      "psr-4": {
-        "xKzl\\BaseHelper\\": ""
-      }
+        "psr-4": {
+            "xKzl\\SkeletonBundle\\": "."
+        }
     },
     "autoload-dev": {
-      "psr-4": { "xKzl\\BaseHelper\\Tests\\": "Tests/" }
-    },
-    "extra": {
-        "branch-alias": {
-            "master": "1.0"
+        "psr-4": {
+            "Tests\\xKzl\\SkeletonBundle\\": "./Tests"
         }
+    },
+    "require": {
+        "php": ">=7.2.5",
+        "symfony/config": "^4.4.17|^5.0",
+        "symfony/dependency-injection": "^4.4.17|^5.0",
+        "symfony/http-kernel": "^4.4.17|^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "symfony/framework-bundle": "^4.4.17|^5.0",
+        "symfony/twig-bundle": "^4.4.17|^5.0",
+        "symfony/var-dumper": "^4.4.17|^5.0"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
     }
 }
+
