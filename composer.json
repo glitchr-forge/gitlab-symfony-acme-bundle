@@ -8,8 +8,7 @@
     "authors": [
         {
             "name": "Marco Meyer",
-            "email": "marco.meyerconde@gmail.com",
-            "role": "Developer"
+            "email": "marco.meyerconde@gmail.com"
         }
     ],
     "support": {
@@ -21,22 +20,21 @@
         "symfony/framework-bundle": ">=5.0 <6.0.0",
         "symfony/security-bundle": ">=5.0 <6.0.0"
     },
-    "require": {
+    "require-dev": {
         "phpunit/phpunit": "^8.0",
         "php-coveralls/php-coveralls": "^2.1"
     },
     "autoload": {
       "psr-4": {
-        "xKzl\\SkeletonBundle\\": ""
+        "xKzl\\BaseHelper\\": ""
       }
     },
-    "autoload": {
-      "psr-4": { "xKzl\\SkeletonBundle\\Tests\\": "Tests/" }
+    "autoload-dev": {
+      "psr-4": { "xKzl\\BaseHelper\\Tests\\": "Tests/" }
     },
     "extra": {
         "branch-alias": {
-            "master": "1.0",
-            "dev-master": "1.0-dev"
+            "master": "1.0"
         }
     }
 }
