@@ -9,5 +9,6 @@ class SkeletonBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
+         /* Put some logic here */
     }
 }

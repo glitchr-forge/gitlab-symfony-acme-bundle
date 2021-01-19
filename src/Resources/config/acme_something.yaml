@@ -1,0 +1,9 @@
+# config/packages/acme_something.yaml
+acme_something_bis:
+    # ...
+    use_acme_goodbye_bis: false
+    entity_manager_name_bis: non_default
+
+acme_other_bis:
+    # ...
+    use_acme_goodbye_bis: false
