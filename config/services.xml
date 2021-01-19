@@ -7,6 +7,6 @@
     <services>
         <defaults public="false" />
 
-        <service id="acme.service1" class="Acme\AcmeBundle\Service\Service1" />
+        <service id="acme.service" class="xKzl\AcmeBundle\Service\AcmeService" />
     </services>
 </container>

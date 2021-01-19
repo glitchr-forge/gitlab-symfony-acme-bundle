@@ -1,6 +1,6 @@
 <?php
 
-namespace xKzl\AcmeBundle\DependencyInjection;
+namespace Acme\AcmeBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
