@@ -13,7 +13,7 @@ class AcmeController
      *
      * @Route("/acme", name="app_acme")
      */
-    public function BeepBeep($name)
+    public function BeepBeep()
     {
         return new Response('<html><body>Beep beep !</body></html>');
     }

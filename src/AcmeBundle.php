@@ -9,6 +9,8 @@ class AcmeBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
-         /* Put some logic here */
+        parent::build($container);
+
+         /* Put some additional logic here */
     }
 }
