@@ -6,7 +6,15 @@
 
     <services>
         <defaults public="false" />
-
-        <service id="acme.service" class="xKzl\AcmeBundle\Service\AcmeService" />
+        <service id="acme.service" class="Acme\AcmeBundle\Service\AcmeService" />
     </services>
+
+    <service id="acme.acme_controller" class="Acme\AcmeBundle\Controller\AcmeController" public="true">
+        <call method="setContainer">
+            <argument type="service" id="Psr\Container\ContainerInterface"/>
+        </call>
+        <tag name="container.service_subscriber"/>
+        <argument type="service" id="acme.acme_controller"/>
+    </service>
+
 </container>
