@@ -6,9 +6,30 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class AcmeHelloExtension extends Extension implements PrependExtensionInterface
+class AcmeExtension extends Extension implements PrependExtensionInterface
 {
-    // ...
+    public function load(array $configs, ContainerBuilder $container)
+    {
+
+        $container
+            ->setDefinition('acme.builder', new Definition(AcmeBuilder::class))
+            ->setPublic(false)
+        ;
+
+        $container
+            ->setAlias(ChartBuilderInterface::class, 'acme.builder')
+            ->setPublic(false)
+        ;
+
+        if (class_exists(Environment::class)) {
+
+            $container
+                ->setDefinition('acme.twig_extension', new Definition(AcmeExtension::class))
+                ->addTag('twig.extension')
+                ->setPublic(false)
+            ;
+        }
+    }
 
     public function prepend(ContainerBuilder $container)
     {
