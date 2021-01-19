@@ -2,9 +2,13 @@
 
 namespace Acme\AcmeBundle\DependencyInjection;
 
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class AcmeExtension extends Extension implements PrependExtensionInterface
 {
@@ -16,15 +20,8 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         $loader = new XmlFileLoader($container, new FileLocator(\dirname(__DIR__, 2).'/config'));
         $loader->load('services.xml');
 
-        $container
-            ->setDefinition('acme.builder', new Definition(AcmeBuilder::class))
-            ->setPublic(false)
-        ;
-
-        $container
-            ->setAlias(ChartBuilderInterface::class, 'acme.builder')
-            ->setPublic(false)
-        ;
+        $container->setDefinition('acme.builder', new Definition(AcmeBuilder::class))->setPublic(false);
+        $container->setAlias(AcmeBuilderInterface::class, 'acme.builder')->setPublic(false);
 
         if (class_exists(Environment::class)) {
 
@@ -43,6 +40,7 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
 
         // determine if AcmeGoodbyeBundle is registered
         if (!isset($bundles['AcmeGoodbyeBundle'])) {
+
             // disable AcmeGoodbyeBundle in bundles
             $config = ['use_acme_goodbye' => false];
             foreach ($container->getExtensions() as $name => $extension) {
