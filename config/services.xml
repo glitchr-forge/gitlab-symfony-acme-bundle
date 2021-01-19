@@ -19,8 +19,14 @@
 
 
         <!-- Listener declarations -->
-        <service id="acme.event_listener" class="Acme\AcmeBundle\Service\AcmeService" />
+        <service id="acme.listener" class="Acme\AcmeBundle\Subscriber\AcmeListener">
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+        </service>
 
+        <!-- Subscriber declarations -->
+        <service id="acme.subscriber" class="Acme\AcmeBundle\Subscriber\AcmeSubscriber">
+            <tag name="kernel.event_subscriber" event="kernel.request" method="onKernelRequest" />
+        </service>
 
         <!-- Service declarations -->
         <service id="acme.service" class="Acme\AcmeBundle\Service\AcmeService" />
