@@ -10,7 +10,6 @@ class AcmeListener
     public function onKernelRequest(RequestEvent $event)
     {
         $request = $event->getRequest();
-	dump("[".__CLASS__."] Hello World!");
+        dump("[".__CLASS__."] Hello World!");
     }
 }
-

@@ -9,11 +9,8 @@
 
         <!-- Controller declarations -->
         <service id="acme.controller" class="Acme\AcmeBundle\Controller\AcmeController" public="true">
-            <!--
-                e.g. Some classic arguments
-                <argument type="service" id="hwi_oauth.security.oauth_utils" />
-                <argument type="service" id="hwi_oauth.resource_ownermap_locator" />
-              -->
+            <argument type="service" id="twig" />
+
             <call method="setContainer"><argument type="service" id="service_container" /></call>
             <tag name="controller.service_arguments" />
         </service>

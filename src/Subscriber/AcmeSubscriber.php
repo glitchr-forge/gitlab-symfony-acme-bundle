@@ -18,7 +18,6 @@ class AcmeSubscriber implements EventSubscriberInterface
     public function onKernelController(ControllerEvent $event)
     {
         $request = $event->getRequest();
-	dump("[".__CLASS__."] Hello World!");
+        dump("[".__CLASS__."] Hello World!");
     }
 }
-
