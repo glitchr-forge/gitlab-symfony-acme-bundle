@@ -1,6 +1,7 @@
 <?php
 
 namespace Acme\AcmeBundle\Subscriber;
+use Acme\AcmeBundle\Controller\AcmeController;
 
 use \Symfony\Component\HttpKernel\Event\ControllerEvent;
 use \Symfony\Component\HttpFoundation\Response;
@@ -17,7 +18,9 @@ class AcmeSubscriber implements EventSubscriberInterface
 
     public function onKernelController(ControllerEvent $event)
     {
-        $request = $event->getRequest();
-        dump("[".__CLASS__."] Hello World!");
+        // Just a test variable
+        AcmeController::$foundAcmeSubscriber = true;
+
+        /* Add some logic here */
     }
 }

@@ -9,7 +9,7 @@
 
         <!-- Controller declarations -->
         <service id="acme.controller" class="Acme\AcmeBundle\Controller\AcmeController" public="true">
-            <argument type="service" id="twig" />
+            <argument type="service" id="acme.service" />
 
             <call method="setContainer"><argument type="service" id="service_container" /></call>
             <tag name="controller.service_arguments" />
@@ -27,6 +27,11 @@
 
         <!-- Service declarations -->
         <service id="acme.service" class="Acme\AcmeBundle\Service\AcmeService" />
+
+        <!-- Twig declarations -->
+        <service id="acme.twig_extension" class="Acme\AcmeBundle\Twig\AcmeTwigExtension" >
+            <tag name="twig.extension" />
+        </service>
 
     </services>
 </container>
