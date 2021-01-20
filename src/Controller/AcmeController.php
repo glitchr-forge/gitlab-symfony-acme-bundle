@@ -41,7 +41,6 @@ class AcmeController extends AbstractController
             "twig" => AcmeController::$foundAcmeTwigExtension
         ];
 
-        dump($acmeFound);
         ob_start();
         include \dirname(__DIR__).'/Resources/views/welcome.html.php';
         return new Response(ob_get_clean(), Response::HTTP_NOT_FOUND);
