@@ -42,6 +42,8 @@ class AcmeController extends AbstractController
         ];
 
         ob_start();
+        $hue = 345;
+        $color = "#75001e";
         include \dirname(__DIR__).'/Resources/views/welcome.html.php';
         return new Response(ob_get_clean(), Response::HTTP_NOT_FOUND);
     }

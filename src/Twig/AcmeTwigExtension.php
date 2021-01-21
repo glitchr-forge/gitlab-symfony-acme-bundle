@@ -35,13 +35,6 @@ class AcmeTwigExtension extends AbstractExtension implements GlobalsInterface
         /* Add some logic here */
     }
 
-    public function getFunctions(): array
-    {
-        return [
-            new TwigFunction('acme_gag', [$this, 'gagFunction'], ['needs_environment' => true, 'is_safe' => ['html']]),
-        ];
-    }
-
     public function getGlobals(): array {
 
         return array(
@@ -50,6 +43,13 @@ class AcmeTwigExtension extends AbstractExtension implements GlobalsInterface
                 'gag2' => "TNT"
             ]
         );
+    }
+
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction('acme_gag', [$this, 'gagFunction'], ['needs_environment' => true, 'is_safe' => ['html']]),
+        ];
     }
 
     public function gagFunction(Environment $env, string $input, string $gag, array $attributes = []): string
