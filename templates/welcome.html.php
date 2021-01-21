@@ -64,7 +64,7 @@
 
             .container {
                 position: relative;
-                background-image: url("assets/images/WarnerBros.png");
+                background-image: url("bundles/acme/assets/images/WarnerBros.png");
                 background-position: center center;
                 background-size:cover;
                 color: hsla(<?php echo $hue; ?>, 20%, 95%, 1);
@@ -104,7 +104,7 @@
             }
 
             .container .logo {
-                background-image: url("assets/images/ThatsAllFolks.png");
+                background-image: url("bundles/acme/assets/images/ThatsAllFolks.png");
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size:contain;
