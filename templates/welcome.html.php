@@ -315,15 +315,20 @@
 
             <div class="status">
                 <code>
-                    <span class="check" style="width:100px;">@Acme</span>
+                    <span class="check" style="width:150px;">Twig: @Acme</span>
                     <span><?php echo $twigResourcePath; ?></span>
                 </code>
             </div>
 
             <div class="status">
                 <code>
-                    <span class="check" style="width:100px;">{{ foo }}</span>
-                    <span><?php echo $twigResourcePath; ?></span>
+                    <span class="check" style="width:300px;">Config: acme_bundle.foo</span>
+                    <span>"<?php echo $foo; ?>"</span>
+                </code>
+
+                <code>
+                    <span class="check" style="width:375px;">Config: acme_bundle.gag.anvil</span>
+                    <span>"<?php echo $anvilWeight; ?>"</span>
                 </code>
             </div>
 

@@ -10,17 +10,19 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 class Configuration implements ConfigurationInterface
 {
+    private $treeBuilder;
+    public function getTreeBuilder() { return $this->treeBuilder; }
     /**
      * @inheritdoc
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('acme_bundle');
-        $rootNode = $treeBuilder->getRootNode();
+        $this->treeBuilder = new TreeBuilder('acme_bundle');
+        $rootNode = $this->treeBuilder->getRootNode();
 
         $this->addGlobalOptionsSection($rootNode);
 
-        return $treeBuilder;
+        return $this->treeBuilder;
     }
 
 
@@ -31,6 +33,14 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('foo')
                     ->defaultValue('bar')
                     ->info('Test section.')
+                ->end()
+                ->arrayNode('gag')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                    ->scalarNode('anvil')
+                        ->defaultValue('0')
+                        ->info('Anvil Weight')
+                    ->end()
                 ->end()
             ->end()
         ;

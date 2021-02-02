@@ -62,7 +62,7 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         $processor = new Processor();
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
-        $this->setConfiguration($container,$config);
+        $this->setConfiguration($container, $config, $configuration->getTreeBuilder()->getRootNode()->getNode()->getName());
 
         //
         // Alias declaration
@@ -72,14 +72,14 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
 
     public function setConfiguration(ContainerBuilder $container, array $config, $globalKey = "")
     {
-        foreach($config as $key => $value) {
+             foreach($config as $key => $value) {
 
             if (!empty($globalKey)) $key = $globalKey.".".$key;
 
-            if (is_array($value)) $this->setConfiguration($container, $config, $key);
+            if (is_array($value)) $this->setConfiguration($container, $value, $key);
             else {
                 $container->setParameter($key, $value);
-
+                //dump("Acme Bundle Debug / \"$key: $value\"");
             }
         }
     }
