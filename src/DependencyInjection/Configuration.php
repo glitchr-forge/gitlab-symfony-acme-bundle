@@ -12,6 +12,7 @@ class Configuration implements ConfigurationInterface
 {
     private $treeBuilder;
     public function getTreeBuilder() { return $this->treeBuilder; }
+
     /**
      * @inheritdoc
      */
