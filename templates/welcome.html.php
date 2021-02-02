@@ -70,6 +70,23 @@
                 color: hsla(<?php echo $hue; ?>, 20%, 95%, 1);
             }
 
+            .anvil {
+                position: relative;
+                background-image: url("bundles/acme/assets/images/Anvil.png");
+                height:100px;
+                background-size:contain;
+                background-position: center center;
+                background-repeat:no-repeat;
+            }
+
+            .anvil-weight {
+                position:relative;
+                top:-85px;
+                color:#babdc0;
+                font-weight:bold;
+                font-family: Verdana;
+            }
+
             .container:after {
                 content: "";
                 position: absolute;
@@ -134,7 +151,7 @@
                 bottom:-10px;
             }
             .status {
-                padding-bottom: 2em;
+                padding-bottom: 1em;
             }
 
             .status code,
@@ -192,8 +209,8 @@
             }
 
             .resource h2 {
-                font-size: 18px;
-                font-weight: normal;
+                font-size: 16px;
+                font-weight: bold;
                 margin-bottom: 5px;
             }
 
@@ -291,8 +308,22 @@
 
             <div class="status">
                 <code>
-                    <span class="check">@Acme</span>
-                    <span>/var/www/chapaland.com/www/vendor/xkzl/acme-bundle/src</span>
+                    <span class="check" style="width:225px;">Public Directory</span>
+                    <span><?php echo $publicPath; ?></span>
+                </code>
+            </div>
+
+            <div class="status">
+                <code>
+                    <span class="check" style="width:100px;">@Acme</span>
+                    <span><?php echo $twigResourcePath; ?></span>
+                </code>
+            </div>
+
+            <div class="status">
+                <code>
+                    <span class="check" style="width:100px;">{{ foo }}</span>
+                    <span><?php echo $twigResourcePath; ?></span>
                 </code>
             </div>
 
@@ -310,10 +341,14 @@
                             d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z">
                         </path>
                     </svg>
-                    <h2>Documentation</h2>
-                    <a href="https://symfony.com/doc/5.2/index.html">
-                        Guides, components, references
-                    </a>
+
+                    <h2>Classic features</h2>
+                    <p style="text-align:left; margin-left:50px;">
+                        - Dependency Injection<br/>
+                        - Configurations<br/>
+                        - Controllers<br/>
+                        - Tests<br/>
+                    </p>
                 </div>
                 <div class="resource">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -322,10 +357,14 @@
                             d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z">
                         </path>
                     </svg>
-                    <h2>Tutorials</h2>
-                    <a href="https://symfony.com/doc/5.2/page_creation.html">
-                        Create your first page
-                    </a>
+
+                    <h2>Additional features</h2>
+                    <p style="text-align:left; margin-left:30px;">
+                        - Service: <?php echo $acmeFound['service'] ? "<span style='color:green;font-weight:bold;'>FOUND</span>" : "<span style='color:red;font-weight:bold;'>NOT FOUND</span>"; ?><br/>
+                        - Listener: <?php echo $acmeFound['listener'] ? "<span style='color:green;font-weight:bold;'>FOUND</span>" : "<span style='color:red;font-weight:bold;'>NOT FOUND</span>"; ?><br/>
+                        - Subscriber: <?php echo $acmeFound['subscriber'] ? "<span style='color:green;font-weight:bold;'>FOUND</span>" : "<span style='color:red;font-weight:bold;'>NOT FOUND</span>"; ?><br/>
+                        - Twig extension: <?php echo $acmeFound['twig'] ? "<span style='color:green;font-weight:bold;'>FOUND</span>" : "<span style='color:red;font-weight:bold;'>NOT FOUND</span>"; ?>
+                    </p>
                 </div>
                 <div class="resource">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -334,10 +373,14 @@
                             d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z">
                         </path>
                     </svg>
-                    <h2>Community</h2>
-                    <a href="https://symfony.com/community">
-                        Connect, get help, or contribute
-                    </a>
+                    <h2>Use custom Entities</h2>
+                    <p>
+                        <div class="anvil"></div>
+                        <div class="anvil-weight">
+                            <?php echo $anvil->getOptions()["weight"]; ?>T
+                        </div>
+                    </p>
+
                 </div>
             </div>
         </div>

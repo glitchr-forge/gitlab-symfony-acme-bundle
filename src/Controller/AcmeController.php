@@ -8,7 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Kernel;
 
-use  Acme\AcmeBundle\Service\AcmeService;
+use Acme\AcmeBundle\Service\AcmeService;
+use Acme\AcmeBundle\Model\Anvil;
 
 class AcmeController extends AbstractController
 {
@@ -31,9 +32,14 @@ class AcmeController extends AbstractController
     public function Main(): Response
     {
         $version = Kernel::VERSION;
-        $projectDir = \dirname(__DIR__);
         $docVersion = substr(Kernel::VERSION, 0, 3);
+        $projectDir = \dirname(__DIR__);
 
+        dump($this);
+        $anvil = new Anvil(1);
+        $configPath = $projectDir."/Resources/config/acme_bundle.yaml";
+        $publicPath = $projectDir."/Resources/public";
+        $twigResourcePath = $projectDir."/Resources/views";
         $acmeFound = [
             "service" => AcmeController::$foundAcmeService,
             "listener" => AcmeController::$foundAcmeListener,

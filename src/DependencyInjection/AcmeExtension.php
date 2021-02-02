@@ -62,10 +62,25 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         $processor = new Processor();
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
+        $this->setConfiguration($container,$config);
 
         //
         // Alias declaration
-        $container->setAlias(AcmeService::class, 'acme.service')->setPublic(false);
-        $container->setAlias(AcmeController::class, 'acme.controller')->setPublic(false);
+        $container->setAlias(AcmeService::class, 'acme.service')->setPublic(true);
+        $container->setAlias(AcmeController::class, 'acme.controller')->setPublic(true);
+    }
+
+    public function setConfiguration(ContainerBuilder $container, array $config, $globalKey = "")
+    {
+        foreach($config as $key => $value) {
+
+            if (!empty($globalKey)) $key = $globalKey.".".$key;
+
+            if (is_array($value)) $this->setConfiguration($container, $config, $key);
+            else {
+                $container->setParameter($key, $value);
+
+            }
+        }
     }
 }
