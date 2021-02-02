@@ -38,7 +38,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                     ->scalarNode('anvil')
-                        ->defaultValue('0')
+                        ->defaultValue('1')
                         ->info('Anvil Weight')
                     ->end()
                 ->end()
