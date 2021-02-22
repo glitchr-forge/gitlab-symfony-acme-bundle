@@ -3,7 +3,7 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-    <class name="Acme\AcmeBundle\Model\Anvil">
+    <class name="Acme\Bundle\Model\Anvil">
         <property name="age">
             <constraint name="GreaterThanOrEqual">
                 <option name="value">1</option> <!-- TON(S) -->

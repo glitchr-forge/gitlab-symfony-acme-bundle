@@ -39,9 +39,9 @@ For instance an example class would be display the welcome page of the bundle.
 namespace App\Controller;
 
 use Twig\Environment;
-use Acme\AcmeBundle\Service\AcmeService;
+use Acme\Bundle\Service\AcmeService;
 
-class AcmeController extends \Acme\AcmeBundle\Controller\AcmeController
+class AcmeController extends \Acme\Bundle\Controller\AcmeController
 {
     public function __construct(Environment $twig, AcmeService $service)
     {

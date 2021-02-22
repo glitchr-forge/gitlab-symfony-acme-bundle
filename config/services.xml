@@ -8,7 +8,7 @@
         <defaults public="false" />
 
         <!-- Controller declarations -->
-        <service id="acme.controller" class="Acme\AcmeBundle\Controller\AcmeController" public="true">
+        <service id="acme.controller" class="Acme\Bundle\Controller\AcmeController" public="true">
             <argument type="service" id="acme.service" />
 
             <call method="setContainer"><argument type="service" id="service_container" /></call>
@@ -16,20 +16,20 @@
         </service>
 
         <!-- Listener declarations -->
-        <service id="acme.listener" class="Acme\AcmeBundle\Subscriber\AcmeListener">
+        <service id="acme.listener" class="Acme\Bundle\Subscriber\AcmeListener">
             <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
         </service>
 
         <!-- Subscriber declarations -->
-        <service id="acme.subscriber" class="Acme\AcmeBundle\Subscriber\AcmeSubscriber">
+        <service id="acme.subscriber" class="Acme\Bundle\Subscriber\AcmeSubscriber">
             <tag name="kernel.event_subscriber" />
         </service>
 
         <!-- Service declarations -->
-        <service id="acme.service" class="Acme\AcmeBundle\Service\AcmeService" />
+        <service id="acme.service" class="Acme\Bundle\Service\AcmeService" />
 
         <!-- Twig declarations -->
-        <service id="acme.twig_extension" class="Acme\AcmeBundle\Twig\AcmeTwigExtension" >
+        <service id="acme.twig_extension" class="Acme\Bundle\Twig\AcmeTwigExtension" >
             <tag name="twig.extension" />
         </service>
 

@@ -1,6 +1,5 @@
 <?php
 
-// src/Acme/AcmeBundle/Controller/AcmeController.php
 namespace Acme\Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
