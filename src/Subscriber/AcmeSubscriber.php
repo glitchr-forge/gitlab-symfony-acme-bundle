@@ -1,7 +1,7 @@
 <?php
 
-namespace Acme\AcmeBundle\Subscriber;
-use Acme\AcmeBundle\Controller\AcmeController;
+namespace Acme\Bundle\Subscriber;
+use Acme\Bundle\Controller\AcmeController;
 
 use \Symfony\Component\HttpKernel\Event\ControllerEvent;
 use \Symfony\Component\HttpFoundation\Response;

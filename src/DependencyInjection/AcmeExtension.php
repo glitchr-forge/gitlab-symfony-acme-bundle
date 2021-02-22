@@ -1,7 +1,7 @@
 <?php
 
-namespace Acme\AcmeBundle\DependencyInjection;
-use Acme\AcmeBundle\Service\AcmeService;
+namespace Acme\Bundle\DependencyInjection;
+use Acme\Bundle\Service\AcmeService;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

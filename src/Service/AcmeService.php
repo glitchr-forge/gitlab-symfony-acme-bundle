@@ -1,6 +1,6 @@
 <?php
-namespace Acme\AcmeBundle\Service;
-use Acme\AcmeBundle\Controller\AcmeController;
+namespace Acme\Bundle\Service;
+use Acme\Bundle\Controller\AcmeController;
 
 class AcmeService
 {

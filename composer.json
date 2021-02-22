@@ -13,12 +13,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Acme\\AcmeBundle\\": "./src"
+            "Acme\\Bundle\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Acme\\AcmeBundle\\": "./src/Tests"
+            "Tests\\Acme\\Bundle\\": "./src/Tests"
         }
     },
     "require": {

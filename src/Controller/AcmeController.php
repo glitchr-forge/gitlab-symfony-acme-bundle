@@ -1,15 +1,15 @@
 <?php
 
 // src/Acme/AcmeBundle/Controller/AcmeController.php
-namespace Acme\AcmeBundle\Controller;
+namespace Acme\Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Kernel;
 
-use Acme\AcmeBundle\Service\AcmeService;
-use Acme\AcmeBundle\Model\Anvil;
+use Acme\Bundle\Service\AcmeService;
+use Acme\Bundle\Model\Anvil;
 
 class AcmeController extends AbstractController
 {

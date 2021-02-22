@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Acme\AcmeBundle\Twig;
-use Acme\AcmeBundle\Controller\AcmeController;
+namespace Acme\Bundle\Twig;
+use Acme\Bundle\Controller\AcmeController;
 
 use Twig\Environment;
 use Twig\TwigFunction;

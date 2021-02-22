@@ -1,7 +1,7 @@
 <?php
 
 // src/Acme/SocialBundle/DependencyInjection/Configuration.php
-namespace Acme\AcmeBundle\DependencyInjection;
+namespace Acme\Bundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
