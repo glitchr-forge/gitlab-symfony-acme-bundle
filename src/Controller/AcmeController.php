@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Kernel;
 
 use Acme\Bundle\Service\AcmeService;
-use Acme\Bundle\Model\Anvil;
+use Acme\Bundle\Entity\Anvil;
 
 class AcmeController extends AbstractController
 {

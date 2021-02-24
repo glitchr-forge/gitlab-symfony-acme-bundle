@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Bundle\Model;
+namespace Acme\Bundle\Entity;
 
 class Anvil
 {

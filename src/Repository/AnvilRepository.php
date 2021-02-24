@@ -2,7 +2,7 @@
 
 namespace Acme\Bundle\Repository;
 
-use Acme\Bundle\Model\Anvil;
+use Acme\Bundle\Entity\Anvil;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
