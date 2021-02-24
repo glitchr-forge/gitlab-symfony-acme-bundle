@@ -5,6 +5,9 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
 
+        <!-- Autowire and autoconfigure in bundle is discouraged by the Symfony Core Team -->
+        <!-- <defaults autowire="true" autoconfigure="true" public="false" /> -->
+
         <defaults public="false" />
 
         <!-- Controller declarations -->
@@ -30,6 +33,12 @@
         <!-- Twig declarations -->
         <service id="acme.twig_extension" class="Acme\Bundle\Twig\AcmeTwigExtension" >
             <tag name="twig.extension" />
+        </service>
+
+        <!-- Repository services -->
+        <service id="Acme\Bundle\Repository\AnvilRepository" class="Acme\Bundle\Repository\AnvilRepository">
+           <tag name="doctrine.repository_service" />
+           <argument type="service" id="doctrine" />
         </service>
 
     </services>
