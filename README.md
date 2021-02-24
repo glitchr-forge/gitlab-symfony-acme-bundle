@@ -36,7 +36,7 @@ For instance an example class would be display the welcome page of the bundle.
 // ./src/Controller/AcmeController.php
 <?php
 
-namespace App\Controller;
+namespace Base\Controller;
 
 use Twig\Environment;
 use Acme\Bundle\Service\AcmeService;
