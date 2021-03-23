@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $this->treeBuilder = new TreeBuilder('acme_bundle');
+        $this->treeBuilder = new TreeBuilder('acme');
         $rootNode = $this->treeBuilder->getRootNode();
 
         $this->addGlobalOptionsSection($rootNode);
