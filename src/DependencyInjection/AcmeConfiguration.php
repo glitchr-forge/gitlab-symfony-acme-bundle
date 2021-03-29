@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-class Configuration implements ConfigurationInterface
+class AcmeConfiguration implements ConfigurationInterface
 {
     private $treeBuilder;
     public function getTreeBuilder() { return $this->treeBuilder; }
@@ -43,7 +43,6 @@ class Configuration implements ConfigurationInterface
                         ->info('Anvil Weight')
                     ->end()
                 ->end()
-            ->end()
-        ;
+            ->end();
     }
 }

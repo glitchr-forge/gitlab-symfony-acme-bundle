@@ -60,7 +60,7 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         //
         // Configuration file: ./config/package/acme_bundle.yaml
         $processor = new Processor();
-        $configuration = new Configuration();
+        $configuration = new AcmeConfiguration();
         $config = $processor->processConfiguration($configuration, $configs);
         $this->setConfiguration($container, $config, $configuration->getTreeBuilder()->getRootNode()->getNode()->getName());
 
