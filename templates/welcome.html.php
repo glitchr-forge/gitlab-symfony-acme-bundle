@@ -322,12 +322,12 @@
 
             <div class="status">
                 <code>
-                    <span class="check" style="width:200px;">acme_bundle.foo</span>
+                    <span class="check" style="width:200px;">acme.foo</span>
                     <span>"<?php echo $foo; ?>"</span>
                 </code>
 
                 <code>
-                    <span class="check" style="width:300px;">acme_bundle.gag.anvil</span>
+                    <span class="check" style="width:300px;">acme.gag.anvil</span>
                     <span>"<?php echo $anvilWeight; ?>"</span>
                 </code>
             </div>

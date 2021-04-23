@@ -34,11 +34,11 @@ class AcmeController extends AbstractController
         $docVersion = substr(Kernel::VERSION, 0, 3);
         $projectDir = \dirname(__DIR__);
 
-        $foo = $this->getParameter("acme_bundle.foo");
-        $anvilWeight = $this->getParameter("acme_bundle.gag.anvil");
+        $foo = $this->getParameter("acme.foo");
+        $anvilWeight = $this->getParameter("acme.gag.anvil");
 
         $anvil = new Anvil($anvilWeight);
-        $configPath = $projectDir."/Resources/config/acme_bundle.yaml";
+        $configPath = $projectDir."/config/acme.yaml";
         $publicPath = $projectDir."/Resources/public";
         $twigResourcePath = $projectDir."/Resources/views";
         $acmeFound = [
