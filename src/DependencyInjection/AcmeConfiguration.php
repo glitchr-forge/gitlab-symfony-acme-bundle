@@ -11,12 +11,12 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 class AcmeConfiguration implements ConfigurationInterface
 {
     private $treeBuilder;
-    public function getTreeBuilder() { return $this->treeBuilder; }
+    public function getTreeBuilder() : TreeBuilder { return $this->treeBuilder; }
 
     /**
      * @inheritdoc
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $this->treeBuilder = new TreeBuilder('acme');
         $rootNode = $this->treeBuilder->getRootNode();
