@@ -25,8 +25,5 @@
         <!-- Twig declarations -->
         <service id="acme.twig_extension" alias="Acme\Bundle\Twig\AcmeTwigExtension" />
 
-        <!-- Repository services -->
-        <service id="Acme\Bundle\Repository\AnvilRepository" alias="Acme\Bundle\Repository\AnvilRepository" />
-
     </services>
 </container>
