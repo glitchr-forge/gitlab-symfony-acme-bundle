@@ -48,6 +48,7 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         // Format XML
         $loader = new XmlFileLoader($container, new FileLocator(\dirname(__DIR__, 2).'/config'));
         $loader->load('services.xml');
+        $loader->load('services-public.xml');
 
         // Format YAML
         //$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
@@ -63,11 +64,6 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         $configuration = new AcmeConfiguration();
         $config = $processor->processConfiguration($configuration, $configs);
         $this->setConfiguration($container, $config, $configuration->getTreeBuilder()->getRootNode()->getNode()->getName());
-
-        //
-        // Alias declaration
-        $container->setAlias(AcmeService::class, 'acme.service')->setPublic(true);
-        $container->setAlias(AcmeController::class, 'acme.controller')->setPublic(true);
     }
 
     public function setConfiguration(ContainerBuilder $container, array $config, $globalKey = "")
