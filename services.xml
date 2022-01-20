@@ -15,7 +15,6 @@
             <tag name="controller.service_arguments" />
             <tag name="container.service_subscriber" />
             <call method="setContainer"><argument type="service" id="Psr\Container\ContainerInterface" /></call>
-            <argument type="service" id="acme.service" />
         </service>
 
         <!-- Listener declarations -->
