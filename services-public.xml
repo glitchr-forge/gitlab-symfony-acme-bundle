@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <!-- Autowire and autoconfigure in bundle is discouraged by the Symfony Core Team -->
+        <!-- <defaults autowire="true" autoconfigure="true" public="false" /> -->
+
+        <defaults public="true" />
+
+        <!-- Controller declarations -->
+        <service id="acme.controller" alias="Acme\Bundle\Controller\AcmeController" />
+
+        <!-- Listener declarations -->
+        <service id="acme.listener" alias="Acme\Bundle\Subscriber\AcmeListener" />
+
+        <!-- Subscriber declarations -->
+        <service id="acme.subscriber" alias="Acme\Bundle\Subscriber\AcmeSubscriber" />
+
+        <!-- Service declarations -->
+        <service id="acme.service" alias="Acme\Bundle\Service\AcmeService" />
+
+        <!-- Twig declarations -->
+        <service id="acme.twig_extension" alias="Acme\Bundle\Twig\AcmeTwigExtension" />
+
+        <!-- Repository services -->
+        <service id="Acme\Bundle\Repository\AnvilRepository" alias="Acme\Bundle\Repository\AnvilRepository" />
+
+    </services>
+</container>

@@ -11,7 +11,7 @@
         <defaults public="false" />
 
         <!-- Controller declarations -->
-        <service id="acme.controller" class="Acme\Bundle\Controller\AcmeController" public="true">
+        <service id="Acme\Bundle\Controller\AcmeController">
             <tag name="controller.service_arguments" />
             <tag name="container.service_subscriber" />
             <call method="setContainer"><argument type="service" id="Psr\Container\ContainerInterface" /></call>
@@ -19,25 +19,25 @@
         </service>
 
         <!-- Listener declarations -->
-        <service id="acme.listener" class="Acme\Bundle\Subscriber\AcmeListener">
+        <service id="Acme\Bundle\Subscriber\AcmeListener">
             <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
         </service>
 
         <!-- Subscriber declarations -->
-        <service id="acme.subscriber" class="Acme\Bundle\Subscriber\AcmeSubscriber">
+        <service id="Acme\Bundle\Subscriber\AcmeSubscriber">
             <tag name="kernel.event_subscriber" />
         </service>
 
         <!-- Service declarations -->
-        <service id="acme.service" class="Acme\Bundle\Service\AcmeService" public="true" />
+        <service id="Acme\Bundle\Service\AcmeService" />
 
         <!-- Twig declarations -->
-        <service id="acme.twig_extension" class="Acme\Bundle\Twig\AcmeTwigExtension" >
+        <service id="Acme\Bundle\Twig\AcmeTwigExtension" >
             <tag name="twig.extension" />
         </service>
 
         <!-- Repository services -->
-        <service id="Acme\Bundle\Repository\AnvilRepository" class="Acme\Bundle\Repository\AnvilRepository">
+        <service id="Acme\Bundle\Repository\AnvilRepository">
            <tag name="doctrine.repository_service" />
            <argument type="service" id="doctrine" />
         </service>
