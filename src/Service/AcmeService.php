@@ -1,5 +1,7 @@
 <?php
+
 namespace Acme\Bundle\Service;
+
 use Acme\Bundle\Controller\AcmeController;
 
 class AcmeService
