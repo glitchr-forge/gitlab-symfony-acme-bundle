@@ -13,7 +13,8 @@
         <!-- Controller declarations -->
         <service id="acme.controller" class="Acme\Bundle\Controller\AcmeController" public="true">
             <tag name="controller.service_arguments" />
-            <call method="setContainer"><argument type="service" id="service_container" /></call>
+            <tag name="container.service_subscriber" />
+            <call method="setContainer"><argument type="service" id="Psr\Container\ContainerInterface" /></call>
             <argument type="service" id="acme.service" />
         </service>
 
@@ -28,7 +29,7 @@
         </service>
 
         <!-- Service declarations -->
-        <service id="acme.service" class="Acme\Bundle\Service\AcmeService" />
+        <service id="acme.service" class="Acme\Bundle\Service\AcmeService" public="true" />
 
         <!-- Twig declarations -->
         <service id="acme.twig_extension" class="Acme\Bundle\Twig\AcmeTwigExtension" >
