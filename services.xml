@@ -11,7 +11,7 @@
         <defaults public="false" />
 
         <!-- Controller declarations -->
-        <service id="Acme\Bundle\Controller\AcmeController">
+        <service id="Acme\Bundle\Controller\AcmeController" public="true">
             <tag name="controller.service_arguments" />
             <tag name="container.service_subscriber" />
             <call method="setContainer"><argument type="service" id="Psr\Container\ContainerInterface" /></call>
@@ -19,20 +19,20 @@
         </service>
 
         <!-- Listener declarations -->
-        <service id="Acme\Bundle\Subscriber\AcmeListener">
+        <service id="Acme\Bundle\Subscriber\AcmeListener" public="true">
             <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
         </service>
 
         <!-- Subscriber declarations -->
-        <service id="Acme\Bundle\Subscriber\AcmeSubscriber">
+        <service id="Acme\Bundle\Subscriber\AcmeSubscriber" public="true">
             <tag name="kernel.event_subscriber" />
         </service>
 
         <!-- Service declarations -->
-        <service id="Acme\Bundle\Service\AcmeService" />
+        <service id="Acme\Bundle\Service\AcmeService" public="true"/>
 
         <!-- Twig declarations -->
-        <service id="Acme\Bundle\Twig\AcmeTwigExtension" >
+        <service id="Acme\Bundle\Twig\AcmeTwigExtension" public="true">
             <tag name="twig.extension" />
         </service>
 
