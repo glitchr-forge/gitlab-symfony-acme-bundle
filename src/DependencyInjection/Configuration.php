@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-class AcmeConfiguration implements ConfigurationInterface
+class Configuration implements ConfigurationInterface
 {
     private $treeBuilder;
     public function getTreeBuilder() : TreeBuilder { return $this->treeBuilder; }

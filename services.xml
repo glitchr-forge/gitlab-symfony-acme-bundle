@@ -6,9 +6,15 @@
     <services>
 
         <!-- Autowire and autoconfigure in bundle is discouraged by the Symfony Core Team -->
+        <!-- (NB: Perhaps you might also use PSR-4 injection) -->
         <!-- <defaults autowire="true" autoconfigure="true" public="false" /> -->
 
         <defaults public="false" />
+
+        <!-- Cache warmer declarations -->
+        <service id="Acme\Bundle\DependencyInjection\CacheWarmer" >
+            <tag name="kernel.cache_warmer" />
+        </service>
 
         <!-- Controller declarations -->
         <service id="Acme\Bundle\Controller\AcmeController" public="true">

@@ -1,7 +1,6 @@
 <?php
 
 namespace Acme\Bundle\DependencyInjection;
-use Acme\Bundle\Service\AcmeService;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -61,7 +60,7 @@ class AcmeExtension extends Extension implements PrependExtensionInterface
         //
         // Configuration file: ./config/package/acme_bundle.yaml
         $processor = new Processor();
-        $configuration = new AcmeConfiguration();
+        $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
         $this->setConfiguration($container, $config, $configuration->getTreeBuilder()->getRootNode()->getNode()->getName());
     }
