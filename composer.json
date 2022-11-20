@@ -1,5 +1,5 @@
 {
-    "name": "xkzl/acme-bundle",
+    "name": "glitchr/acme-bundle",
     "type": "symfony-bundle",
     "description": "ACME Skeleton Bundle for Symfony5",
     "keywords": ["symfony", "skeleton", "acme"],
