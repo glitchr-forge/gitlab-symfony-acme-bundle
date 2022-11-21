@@ -9,8 +9,8 @@ Installation
 This bundle is setup to provide a ready-to-use skeleton. It includes some alternatives in the configuration and some basic features.
 You can install this bundle using the command:
 ```
-composer require xkzl/acme-bundle # Use this line for the stable release
-composer require --dev xkzl/acme-bundle:dev-admin # Use this line to get thee current work-in-progress branch
+composer require glitchr/acme-bundle # Use this line for the stable release
+composer require --dev glitchr/acme-bundle:dev-admin # Use this line to get thee current work-in-progress branch
 ```
 
 Bundle information
